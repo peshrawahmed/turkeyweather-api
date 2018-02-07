@@ -2,9 +2,10 @@
 include('src/turkeyweather.php');
 
 $weather = new TurkeyWeather();
-$weather->province('burdur');
+$weather->province('Ankara');
+$weather->district('Çankaya');
 
-echo $weather->temperatureK();
+echo $weather->province() . ' ' . $weather->district() . '\'da şu an Sıcaklık ' . $weather->temperature() . ' derecedir';
 
 ?>
 
