@@ -120,8 +120,28 @@ Sıcaklık değerini döndürür. birimi Santigrattir. Örnek:
 ###### Çıktı:
 > 12.3
 
+#### 5. temperatureK()
+Sıcaklık değerini Kelvin Birimiyle döndürür. Örnek:
+```php 
+<?php
+  echo $weather->temperatureK();
+?>
+```
+###### Çıktı:
+> 56.12
 
-#### 5. pressure()
+#### 6. temperatureF()
+Sıcaklık değerini Fahrenheit birimiyle döndürür. Örnek:
+```php 
+<?php
+  echo $weather->temperatureF();
+?>
+```
+###### Çıktı:
+> 56.12
+
+
+#### 7. pressure()
 Aktüel Basınç değerini döndürür. birimi Hektopaskaldir(hPa). Örnek:
 ```php 
 <?php
@@ -132,7 +152,7 @@ Aktüel Basınç değerini döndürür. birimi Hektopaskaldir(hPa). Örnek:
 > 912
 
 
-#### 6. seaPressure()
+#### 8. seaPressure()
 Denize İndirgenmiş Basınç değerini döndürür. birimi Hektopaskaldir(hPa). Örnek:
 ```php 
 <?php
@@ -142,7 +162,7 @@ Denize İndirgenmiş Basınç değerini döndürür. birimi Hektopaskaldir(hPa).
 ###### Çıktı:
 > 1023.3
 
-#### 7. airHumidity()
+#### 9. airHumidity()
 Nem oranını yüzde olarak döndürür. Örnek:
 ```php 
 <?php
@@ -152,7 +172,7 @@ Nem oranını yüzde olarak döndürür. Örnek:
 ###### Çıktı:
 > 45
 
-#### 8. windSpeed()
+#### 10. windSpeed()
 Rüzgar hızını döndürür. birimi km/sa. Örnek:
 ```php 
 <?php
@@ -162,7 +182,7 @@ Rüzgar hızını döndürür. birimi km/sa. Örnek:
 ###### Çıktı:
 > 3.21
 
-#### 9. rainNow() 10. rain10mins() 11. rain1hour() 12. rain6hours() 13. rain12hours() 14. rain24hours()
+#### 11. rainNow() 12. rain10mins() 13. rain1hour() 14. rain6hours() 15. rain12hours() 16. rain24hours()
 Metod başlığında belirtilen zaman dilimindeki yağış miktarını döndürür. birimi mm. Örnek:
 ```php 
 <?php
@@ -172,7 +192,7 @@ Metod başlığında belirtilen zaman dilimindeki yağış miktarını döndür�
 ###### Çıktı:
 > 0
 
-#### 15. event()
+#### 17. event()
 Hava hadisesini json formatında döndürür. 
 ```json
 {
@@ -190,7 +210,7 @@ Hava hadisesini json formatında döndürür.
 ###### Çıktı:
 > {"code":"CB","turkish":"Çok Bulutlu","english":"Mostly Cloudy"}
 
-#### 16. longitude()
+#### 18. longitude()
 İl ve ya ilçenin boylam derecesini döndürür. Örnek:
 ```php 
 <?php
@@ -200,7 +220,7 @@ Hava hadisesini json formatında döndürür.
 ###### Çıktı:
 > 30.294
 
-#### 17. latitude()
+#### 19. latitude()
 İl ve ya ilçenin enlem derecesini döndürür. Örnek:
 ```php 
 <?php
