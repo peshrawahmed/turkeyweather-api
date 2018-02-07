@@ -23,7 +23,8 @@ veya
 ?>
 ```
 İl değerini belirtmek kütüphanenin çalışması için zorunludur. İlçe zorunlu değil. Belirtilmediği zaman MGM'nin her il için belirlediği 'varsayılan' ilçesi için sonuçlar döndürülür. Örnek İstanbul için Bakırköy ilçesi seçilmiş
-En sonda almak istediğimiz verinin metodunu çağırarak o veriyi elde edebileceğiz. Örnek:
+<br />
+En sonunda almak istediğimiz verinin metodunu çağırarak o veriyi elde edebileceğiz. Örnek:
 ```php 
 <?php
   echo 'Sıcaklık ' . $weather->Temperature() . ' derecedir';
