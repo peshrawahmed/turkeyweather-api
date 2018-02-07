@@ -1,5 +1,5 @@
 <?php
-include('turkeyweather.php');
+include('src/turkeyweather.php');
 
 $weather = new TurkeyWeather();
 $weather->province('burdur');
