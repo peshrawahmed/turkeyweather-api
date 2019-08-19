@@ -1,6 +1,8 @@
 # turkeyweather-api
 Türkiye il ve ilçeleri güncel hava durumlarını Meteoroloji Genel Müdürlüğü Sitesinden getirir. 2018
 
+> **Çok Önemli:** Bu kütüphane `Meteoroloji Genel Müdürlüğü` tarafından getirilen kısıtlama nedeniyle terkedilmiştir. Lütfen alternatif bir kütüphane kullanın. Kullanıp beğendiğiniz bir kütüphane iletirseniz burada linkini paylaşabilirim.
+
 ## Kullanım
 Kullanmadan Önce turkeyweather.php dosyasını projenize eklemeniz gerekebilir. Basit bir ekleme örneği
 ```php 
