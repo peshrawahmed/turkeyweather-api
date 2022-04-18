@@ -1,4 +1,3 @@
-
 <?php
 /* amacınız kütüphaneyi geliştirmek değil sadece kullanmaksa bu sayfada herhangi bir değişiklik yapmanıza gerek yok. */
 
@@ -23,11 +22,12 @@ class TurkeyWeather{
 		$province = str_replace(['Ç','ç','ı','İ','Ğ','ğ','Ö','ö','Ü','ü','ş','Ş','â','Â'], ['c','c','i','i','g','g','o','o','u','u','s','s','a','a'], $this->province_name);
 		$district = str_replace(['Ç','ç','ı','İ','Ğ','ğ','Ö','ö','Ü','ü','ş','Ş','â','Â'], ['c','c','i','i','g','g','o','o','u','u','s','s','a','a'], $this->district_name);
 
-		$targetLocation = "https://servis.mgm.gov.tr/api/merkezler?il=" . $province . '&ilce=' . $district; // İl ve İlçe bilgilerini getirir. ilçe yoksa veya yanlışsa mgm sitesindeki varsayılan ilçe için sonuçları getirir. Örn. Ankara için keçiören ilçesi
-		$weatherNow = "https://servis.mgm.gov.tr/api/sondurumlar?merkezid="; // Hava durumunu getiren URL. merkezid değerini daha elde etmediğimiz için yazılmadı
+		$targetLocation = "https://servis.mgm.gov.tr/web/merkezler?il=" . $province . '&ilce=' . $district; // İl ve İlçe bilgilerini getirir. ilçe yoksa veya yanlışsa mgm sitesindeki varsayılan ilçe için sonuçları getirir. Örn. Ankara için keçiören ilçesi
+		$weatherNow = "https://servis.mgm.gov.tr/web/sondurumlar?merkezid="; // Hava durumunu getiren URL. merkezid değerini daha elde etmediğimiz için yazılmadı
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $targetLocation );
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, ['Referer: https://www.mgm.gov.tr/', 'Origin: https://www.mgm.gov.tr', 'Host: servis.mgm.gov.tr']);
 		if(strlen(curl_exec($curl)) == 2){
 			return '{"code": "404","message": "Province or District is not valid"}'; //yanlis il ve ilce yazildiginda
 		}
