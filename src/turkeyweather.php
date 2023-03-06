@@ -18,10 +18,22 @@ class TurkeyWeather{
 
 	private function getData(){ // Bilgileri mgm.gov.tr den getirir
 
-		// türkçe karakterleri her ihtimale karşı değiştiriyor
-		$province = str_replace(['Ç','ç','ı','İ','Ğ','ğ','Ö','ö','Ü','ü','ş','Ş','â','Â'], ['c','c','i','i','g','g','o','o','u','u','s','s','a','a'], $this->province_name);
-		$district = str_replace(['Ç','ç','ı','İ','Ğ','ğ','Ö','ö','Ü','ü','ş','Ş','â','Â'], ['c','c','i','i','g','g','o','o','u','u','s','s','a','a'], $this->district_name);
-
+		// türkçe karakterleri her ihtimale karşı değiştiriyor,
+		$province = $district = "";
+		
+		if (!empty($this->province_name)) {
+			$province = iconv('UTF-8', 'ASCII//TRANSLIT', $this->province_name);
+		} else {
+			$province = '';
+		}
+		
+		if (!empty($this->district_name)) {
+			$district = iconv('UTF-8', 'ASCII//TRANSLIT', $this->district_name);
+		} else {
+			$district = '';
+		}
+		
+		
 		$targetLocation = "https://servis.mgm.gov.tr/web/merkezler?il=" . $province . '&ilce=' . $district; // İl ve İlçe bilgilerini getirir. ilçe yoksa veya yanlışsa mgm sitesindeki varsayılan ilçe için sonuçları getirir. Örn. Ankara için keçiören ilçesi
 		$weatherNow = "https://servis.mgm.gov.tr/web/sondurumlar?merkezid="; // Hava durumunu getiren URL. merkezid değerini daha elde etmediğimiz için yazılmadı
 		$curl = curl_init();
